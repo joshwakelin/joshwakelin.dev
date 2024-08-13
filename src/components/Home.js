@@ -1,5 +1,3 @@
-// src/components/Home.js
-
 import React, { useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.css';
@@ -9,6 +7,7 @@ import { Autoplay } from 'swiper/modules';
 
 const Home = () => {
   useEffect(() => {
+    // Dynamic text animation
     const textElement = document.getElementById('dynamicText');
     const texts = ["SOFTWARE DEVELOPER", "NETWORK ENGINEER", "WEB DEVELOPER", "PYTHON SCRIPTER"];
     let currentTextIndex = 0;
@@ -42,6 +41,22 @@ const Home = () => {
     }
 
     updateText();
+
+    const preloader = document.querySelector('#preloader');
+    if (preloader) {
+      console.log('found')
+
+      setTimeout(() => {
+          
+        preloader.classList.add('fade-out');
+      }, 1500); 
+      
+        setTimeout(() => {
+          
+          preloader.remove();
+        }, 2000); 
+
+    }
   }, []);
 
   return (
@@ -88,7 +103,6 @@ const Home = () => {
         </div>
       </section>
 
-     
       <section id="swiper-holder" className=" p-5 pt-5 pb-5" style={{ backgroundColor: 'rgb(32, 31, 31)', width: '100%', overflow: 'hidden' }}>
         <Swiper
           modules={[Autoplay]}
@@ -100,14 +114,16 @@ const Home = () => {
           {Array.from({ length: 16 }).map((_, index) => (
             <SwiperSlide key={index}>
               <img
-                src={`image/slider/${index + 1}.png` }
+                src={`image/slider/${index + 1}.png`}
                 alt={`Slide ${index + 1}`}
-                style={{ width: '12vh', height: '12vh', }}
+                style={{ width: '12vh', height: '12vh' }}
               />
             </SwiperSlide>
           ))}
         </Swiper>
       </section>
+
+      <div id="preloader"></div>
     </>
   );
 };

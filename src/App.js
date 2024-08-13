@@ -13,10 +13,15 @@ import Footer from './components/Footer';
 import './index.css';
 
 function App() {
+
+
+
+    
   useEffect(() => {
     AOS.init({
       duration: 1000, // Adjust as needed
     });
+
   }, []);
 
   return (
