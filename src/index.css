@@ -610,7 +610,7 @@ footer {
     
     .d-inline-flex {
         display: inline-flex;
-        align-items: baseline; /* Aligns text to the baseline of the font */
+        align-items: center; /* Aligns text to the baseline of the font */
     }
     
     #dynamicText {
