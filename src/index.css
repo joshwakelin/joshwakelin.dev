@@ -349,7 +349,7 @@ img {
     #dynamicText {
     display: inline-block;
     min-width: 500px; /* Ensures the element occupies space even when empty */
-    min-height: 352px;
+    min-height: 35px;
     vertical-align: middle; /* Aligns the dynamic text vertically */
 }
     ul.timeline > li > .timeline-panel {
