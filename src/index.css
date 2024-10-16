@@ -346,6 +346,12 @@ img {
         left: 40px;
     }
 
+    #dynamicText {
+    display: inline-block;
+    min-width: 500px; /* Ensures the element occupies space even when empty */
+    min-height: 2px;
+    vertical-align: middle; /* Aligns the dynamic text vertically */
+}
     ul.timeline > li > .timeline-panel {
         width: calc(100% - 90px);
         width: -moz-calc(100% - 90px);
@@ -477,6 +483,11 @@ textarea::-ms-input-placeholder {
 
 
 @media (min-width: 994px) {
+
+    #dynamicText {
+    min-height: 50px;
+}
+    
     .navbar {
         min-height: 100vh;
         width: var(--sidebar-width);
