@@ -110,7 +110,7 @@ const Home = () => {
           slidesPerView={6}
           autoplay={{ delay: 2000 }}
           breakpoints={{
-            320: { slidesPerView: 2 },
+            320: { slidesPerView: 3 },
             480: { slidesPerView: 3 },
             640: { slidesPerView: 4 },
             768: { slidesPerView: 5 },
