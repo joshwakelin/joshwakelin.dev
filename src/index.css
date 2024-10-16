@@ -78,7 +78,6 @@ body {
 #dynamicText {
     display: inline-block;
     min-width: 500px; /* Ensures the element occupies space even when empty */
-    min-height: 50px;
     vertical-align: middle; /* Aligns the dynamic text vertically */
 }
 h1,h2,h3,h4,h5 {
