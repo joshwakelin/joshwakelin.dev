@@ -103,7 +103,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section id="swiper-holder" className=" p-5 pt-5 pb-5" style={{ backgroundColor: 'rgb(32, 31, 31)', width: '100%', overflow: 'hidden' }}>
+      <section id="swiper-holder" className=" p-5 pt-5 pb-5" style={{ backgroundColor: 'rgb(32, 31, 31)', width: '100vh', overflow: 'hidden' }}>
         <Swiper
           modules={[Autoplay]}
           spaceBetween={20}
