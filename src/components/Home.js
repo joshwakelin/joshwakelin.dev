@@ -112,8 +112,8 @@ const Home = () => {
           breakpoints={{
             320: { slidesPerView: 3, spaceBetween: 30},
             480: { slidesPerView: 3, spaceBetween: 30},
-            640: { slidesPerView: 4 },
-            768: { slidesPerView: 5 },
+            640: { slidesPerView: 3 },
+            768: { slidesPerView: 3 },
             1024: { slidesPerView: 6 },
           }}
         
