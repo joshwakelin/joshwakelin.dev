@@ -106,7 +106,7 @@ const Home = () => {
       <section id="swiper-holder" className=" p-5 pt-5 pb-5" style={{ backgroundColor: 'rgb(32, 31, 31)', width: '100vh', overflow: 'hidden' }}>
         <Swiper
           modules={[Autoplay]}
-          spaceBetween={20}
+          spaceBetween={5}
           slidesPerView={6}
           autoplay={{ delay: 2000 }}
           breakpoints={{
