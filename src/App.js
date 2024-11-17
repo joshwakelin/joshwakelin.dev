@@ -5,7 +5,6 @@ import Navbar from './components/Navbar';
 import Home from './components/Home';
 import About from './components/About';
 import Projects from './components/Projects';
-import Journey from './components/Journey';
 
 import Skills from './components/Skills';
 import Contact from './components/Contact';
@@ -32,7 +31,6 @@ function App() {
         <About />
         <Projects />
         <Skills />
-        <Journey />
         <Contact />
         <Footer />
       </div>
