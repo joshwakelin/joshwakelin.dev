@@ -1,36 +1,34 @@
 import React, { useEffect, useState } from 'react';
 
 const Skills = () => {
-  const [skillsData, setSkillsData] = useState([]); // State to hold the combined skills data
-  const [loading, setLoading] = useState(true); // State to indicate loading
+  const [skillsData, setSkillsData] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Fetch both skills and categories data
     Promise.all([
       fetch('https://api.joshwakelin.dev/data/skills').then((response) => response.json()),
       fetch('https://api.joshwakelin.dev/data/skill_categories').then((response) => response.json())
     ])
       .then(([skills, categories]) => {
-        // Merge skills data with category names
         const mergedData = categories.map((category) => {
           const categorySkills = skills.filter((skill) => skill.category_id === category.id);
           return {
-            name: category.name || 'Unknown', // Fallback for category name
+            name: category.name || 'Unknown',
             id: category.id,
             skills: categorySkills
           };
         });
-        setSkillsData(mergedData); // Update state with merged data
-        setLoading(false); // Data loaded
+        setSkillsData(mergedData);
+        setLoading(false);
       })
       .catch((error) => {
         console.error('Error fetching data:', error);
-        setLoading(false); // Stop loading even if there's an error
+        setLoading(false);
       });
   }, []);
 
   if (loading) {
-    return <p>Loading...</p>; // Display a loading message while fetching data
+    return <p>Loading...</p>;
   }
 
   return (
@@ -40,7 +38,6 @@ const Skills = () => {
         <div className="content">
           <div className="skills-description"></div>
           <div className="skills-info skills-all">
-            {/* Render skills data */}
             {skillsData.map((category) => (
               <div 
                 key={category.id} 
