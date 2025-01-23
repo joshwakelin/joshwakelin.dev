@@ -64,7 +64,7 @@ const Cards = () => {
             <div className="card" 
             data-aos="fade"
             data-aos-duration="1000"
-            data-aos-delay={200 + index * 50} // Adding incrementing delay (200ms, 250ms, 300ms, ...)key={index} 
+            data-aos-delay={200 + index * 50}  
             >
               <div
                
