@@ -5,7 +5,7 @@ const Skills = () => {
 
   useEffect(() => {
     // Fetch the skills data from the API when the component mounts
-    fetch('http://api.joshwakelin.dev/data/skills')  // Adjust the URL to your API endpoint
+    fetch('https://api.joshwakelin.dev/data/skills')  // Adjust the URL to your API endpoint
       .then((response) => response.json())
       .then((data) => {
         setSkillsData(data);  // Store the fetched data in the state
