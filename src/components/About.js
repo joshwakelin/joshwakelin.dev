@@ -34,7 +34,6 @@ const About = () => {
         <h1 className="section-title-01" data-aos-duration="1000" data-aos="fade-down">
           About Me
         </h1>
-        <h2 className="section-title-02"></h2>
         <div className="content flex-center">
           <div
             className="about-img"
@@ -45,7 +44,7 @@ const About = () => {
           >
             <img
               src="images/josh.jpg"
-              alt="Josh Wakelin's profile"
+              alt="Josh Wakelin, a 23-year-old software developer"
               style={{
                 transition: inViewport ? 'transform 0.1s ease-out' : 'transform 0.5s ease-in',
               }}
