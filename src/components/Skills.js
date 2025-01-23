@@ -31,7 +31,9 @@ const Skills = () => {
             {/* Loop over skills data dynamically */}
             {skillsData.map((category) => (
               <div key={category.id} className={category.name.toLowerCase()}>
-                <h4 data-aos-delay="200" data-aos="fade"><label>{category.name}</label></h4>
+                <h4 data-aos-delay="200" data-aos="fade">
+                  <label>{category.name}</label>
+                </h4>
                 <ul className="bars">
                   {category.skills.map((skill) => (
                     <li key={skill.name} className="bar" data-aos-delay="" data-aos="fade">
@@ -39,7 +41,12 @@ const Skills = () => {
                         <span>{skill.name}</span>
                         <span>{skill.progress}%</span>
                       </div>
-                      <div className="line" data-progress={skill.progress}></div>
+                      <div 
+                        className="line" 
+                        data-progress={skill.progress} 
+                        aria-labelledby={`skill-${skill.name}-progress`}
+                      ></div>
+                      {/* Adding aria-labelledby to describe the progress visually */}
                     </li>
                   ))}
                 </ul>

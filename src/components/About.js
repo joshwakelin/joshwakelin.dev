@@ -45,7 +45,7 @@ const About = () => {
           >
             <img
               src="images/josh.jpg"
-              alt=""
+              alt="Josh Wakelin's profile picture"
               style={{
                 transition: inViewport ? 'transform 0.1s ease-out' : 'transform 0.5s ease-in',
               }}
@@ -53,18 +53,24 @@ const About = () => {
           </div>
           <div className="about-info">
             <div className="description">
-              <h3 data-aos="fade" data-aos-delay="200">
+              <h2 data-aos="fade" data-aos-delay="200">
                 👋 Hi! I'm Josh Wakelin
-              </h3>
+              </h2>
               <p data-aos="fade" data-aos-delay="250">
                 I am a 23-year-old software developer with a particular interest in artificial intelligence and cybersecurity. This portfolio contains a list of my most recent projects and experience, with a link to also view or download my CV.
               </p>
-              <a href="" className="btn" data-aos="fade" data-aos-delay="300">
-                Download CV <i className="fa-solid fa-download"></i>
+              <a
+                href="/path-to-cv.pdf"
+                className="btn"
+                data-aos="fade"
+                data-aos-delay="300"
+                aria-label="Download my CV"
+              >
+                Download CV <i className="fa-solid fa-download" aria-hidden="true"></i>
               </a>
-              <h3 className="description-section-02" data-aos="fade" data-aos-delay="200">
+              <h2 className="description-section-02" data-aos="fade" data-aos-delay="200">
                 🖥 Off the Web
-              </h3>
+              </h2>
               <p data-aos="fade" data-aos-delay="250">
                 I was raised in Surrey, BC, and have relocated to London, Ontario. As a kid, I was fascinated by technology and more specifically the idea of automation in everyday life. When I'm not coding, I spend my time exercising and spending quality time with my loved ones.
               </p>

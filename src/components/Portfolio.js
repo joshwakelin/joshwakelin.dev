@@ -29,7 +29,6 @@ const Cards = () => {
       text: "View Project",
       skills: [".ts", "NestJS", "Firebase", "REST"],
     },
-
     {
       title: "joshwakelin.dev",
       description:
@@ -39,8 +38,6 @@ const Cards = () => {
       text: "View Project",
       skills: ["React", "postgreSQL", ".html", ".js"],
     },
-
-
     {
       title: "Glace",
       description:
@@ -61,17 +58,17 @@ const Cards = () => {
         <h2 className="section-title-02"></h2>
         <div className="cards-grid">
           {projects.map((project, index) => (
-            <div className="card" 
-            data-aos="fade"
-            data-aos-duration="1000"
-            data-aos-delay={200 + index * 50}  
+            <div
+              className="card"
+              data-aos="fade"
+              data-aos-duration="1000"
+              data-aos-delay={200 + index * 50}
+              key={index}
             >
-              <div
-               
-              >
+              <div>
                 <img
                   src={project.image}
-                  alt={project.title}
+                  alt={`${project.title} project screenshot`}  
                   className="card-image"
                 />
               </div>
@@ -87,13 +84,20 @@ const Cards = () => {
                     <span
                       key={idx}
                       className={`badge ${skill === "WIP" ? "badge-red" : ""}`}
+                      aria-label={`Skill: ${skill}`}  
                     >
                       {skill}
                     </span>
                   ))}
                 </div>
                 <p className="card-description">{project.description}</p>
-                <a href={project.link} target="_blank" className="btn-bare" rel="noopener noreferrer">
+                <a
+                  href={project.link}
+                  target="_blank"
+                  className="btn-bare"
+                  rel="noopener noreferrer"
+                  aria-label={`Link to ${project.title}`} 
+                >
                   {project.text} <i className="fa-solid fa-arrow-right"></i>
                 </a>
               </div>
@@ -106,5 +110,3 @@ const Cards = () => {
 };
 
 export default Cards;
-
-
