@@ -45,7 +45,7 @@ const About = () => {
           >
             <img
               src="images/josh.jpg"
-              alt="Josh Wakelin's profile picture"
+              alt="Josh Wakelin's profile"
               style={{
                 transition: inViewport ? 'transform 0.1s ease-out' : 'transform 0.5s ease-in',
               }}

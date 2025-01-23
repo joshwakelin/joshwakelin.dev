@@ -55,7 +55,6 @@ const Cards = () => {
         <h1 className="section-title-01" data-aos-duration="1000" data-aos="fade-down">
           Projects
         </h1>
-        <h2 className="section-title-02"></h2>
         <div className="cards-grid">
           {projects.map((project, index) => (
             <div

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 // Dynamically import all images in the 'images/swipe' directory
 
@@ -62,18 +62,18 @@ const Home = () => {
         data-aos="fade"
       >
         <div className="scrollerc__inner">
-          <img src="images/swipe/2.png" alt="Swipe image 2" />
-          <img src="images/swipe/6.png" alt="Swipe image 6" />
-          <img src="images/swipe/7.png" alt="Swipe image 7" />
-          <img src="images/swipe/8.png" alt="Swipe image 8" />
-          <img src="images/swipe/9.png" alt="Swipe image 9" />
-          <img src="images/swipe/10.png" alt="Swipe image 10" />
-          <img src="images/swipe/13.png" alt="Swipe image 13" />
-          <img src="images/swipe/14.png" alt="Swipe image 14" />
-          <img src="images/swipe/15.png" alt="Swipe image 15" />
-          <img src="images/swipe/js.png" alt="Swipe image" />
-          <img src="images/swipe/postgresql.png" alt="Swipe image Undefined" />
-          <img src="images/swipe/py.png" alt="Swipe Image 16" />
+          <img src="images/swipe/2.png" alt="Swipe  2" />
+          <img src="images/swipe/6.png" alt="Swipe  6" />
+          <img src="images/swipe/7.png" alt="Swipe  7" />
+          <img src="images/swipe/8.png" alt="Swipe  8" />
+          <img src="images/swipe/9.png" alt="Swipe  9" />
+          <img src="images/swipe/10.png" alt="Swipe  10" />
+          <img src="images/swipe/13.png" alt="Swipe  13" />
+          <img src="images/swipe/14.png" alt="Swipe  14" />
+          <img src="images/swipe/15.png" alt="Swipe  15" />
+          <img src="images/swipe/js.png" alt="Swipe " />
+          <img src="images/swipe/postgresql.png" alt="Swipe  Undefined" />
+          <img src="images/swipe/py.png" alt="Swipe  16" />
         </div>
       </div>
     </section>
