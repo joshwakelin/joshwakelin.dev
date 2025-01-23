@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 
 const Skills = () => {
   const [skillsData, setSkillsData] = useState([]); 
-  const [categoriesData, setCategoriesData] = useState([]); 
 
   useEffect(() => {
     Promise.all([
