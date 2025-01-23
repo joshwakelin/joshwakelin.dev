@@ -34,7 +34,6 @@ const About = () => {
         <h1 className="section-title-01" data-aos-duration="1000" data-aos="fade-down">
           About Me
         </h1>
-        <h2 className="section-title-02"></h2>
         <div className="content flex-center">
           <div
             className="about-img"

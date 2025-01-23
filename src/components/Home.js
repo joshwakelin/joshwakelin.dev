@@ -25,18 +25,18 @@ const Home = () => {
 
       <div className='scrollerc' data-aos-duration="1000" data-aos-mirror="true" data-aos-delay="850" data-aos="fade">
         <div className="scrollerc__inner">
-          <img src="images/swipe/2.png" />
-          <img src="images/swipe/6.png" />
-          <img src="images/swipe/7.png" />
-          <img src="images/swipe/8.png" />
-          <img src="images/swipe/9.png" />
-          <img src="images/swipe/10.png" />
-          <img src="images/swipe/13.png" />
-          <img src="images/swipe/14.png" />
-          <img src="images/swipe/15.png" />
-          <img src="images/swipe/js.png" />
-          <img src="images/swipe/postgresql.png" />
-          <img src="images/swipe/py.png" />
+          <img src="images/swipe/2.png" alt="swipe"/>
+          <img src="images/swipe/6.png" alt="swipe"/>
+          <img src="images/swipe/7.png" alt="swipe"/>
+          <img src="images/swipe/8.png" alt="swipe"/>
+          <img src="images/swipe/9.png" alt="swipe"/>
+          <img src="images/swipe/10.png" alt="swipe"/>
+          <img src="images/swipe/13.png" alt="swipe"/>
+          <img src="images/swipe/14.png" alt="swipe"/>
+          <img src="images/swipe/15.png" alt="swipe"/>
+          <img src="images/swipe/js.png" alt="swipe"/>
+          <img src="images/swipe/postgresql.png" alt="swipe"/>
+          <img src="images/swipe/py.png" alt="swipe"/>
 
         </div>
       </div>
