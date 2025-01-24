@@ -21,9 +21,28 @@ function App() {
  useEffect(() => {
 
   AOS.init({
-    duration: 1000, // Adjust animation duration
-    once: true, // Animations should happen only once
+    duration: 1000, 
+    once: true, 
   });
+  wave();
+
+
+  const wave = async () => {
+    try {
+      const response = await fetch(`api.joshwakelin.dev/wave`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+      });
+
+      if (!response.ok) {
+        console.error('Failed to log visit:', response.statusText);
+      } else {
+        console.log(response);
+      }
+    } catch (err) {
+      console.error('Error', err.message);
+    }
+  };
       
    const innerScroll = document.querySelector(".scrollerc").querySelector(".scrollerc__inner")
    const innerScrollContent = Array.from(innerScroll.children)
