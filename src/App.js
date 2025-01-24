@@ -16,7 +16,7 @@ function App() {
   useEffect(() => {
     const wave = async () => {
       try {
-        const response = await fetch(`api.joshwakelin.dev/wave`, {
+        const response = await fetch(`https://api.joshwakelin.dev/wave`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
         });
