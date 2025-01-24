@@ -9,78 +9,70 @@ import './index.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import 'aos/dist/aos.css'; // Import AOS styles globally
 
-
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-
 function App() {
+  useEffect(() => {
+    const wave = async () => {
+      try {
+        const response = await fetch(`api.joshwakelin.dev/wave`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+        });
 
-
- 
- useEffect(() => {
-
-  AOS.init({
-    duration: 1000, 
-    once: true, 
-  });
-  wave();
-
-
-  const wave = async () => {
-    try {
-      const response = await fetch(`api.joshwakelin.dev/wave`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-      });
-
-      if (!response.ok) {
-        console.error('Failed to log visit:', response.statusText);
-      } else {
-        console.log(response);
+        if (!response.ok) {
+          console.error('Failed to log visit:', response.statusText);
+        } else {
+          console.log(response);
+        }
+      } catch (err) {
+        console.error('Error', err.message);
       }
-    } catch (err) {
-      console.error('Error', err.message);
-    }
-  };
-      
-   const innerScroll = document.querySelector(".scrollerc").querySelector(".scrollerc__inner")
-   const innerScrollContent = Array.from(innerScroll.children)
+    };
 
-   innerScrollContent.forEach(image => {
-      const dupe = image.cloneNode(true)
-      dupe.setAttribute("aria-hidden", true)
-      innerScroll.appendChild(dupe)
-   })
+    AOS.init({
+      duration: 1000,
+      once: true,
+    });
 
+    wave(); // Call the wave function after it is defined
 
-      window.addEventListener("scroll", function(){
-        const nav = document.querySelector("header")
-        nav.classList.toggle("sticky", window.scrollY > 0);
-      })
+    const innerScroll = document.querySelector(".scrollerc").querySelector(".scrollerc__inner");
+    const innerScrollContent = Array.from(innerScroll.children);
 
-      const menuButton = document.querySelector(".nav-menu-btn")
-      const closeButton = document.querySelector(".nav-close-btn")
-      const navigation = document.querySelector(".navigation")
-      const navItems = document.querySelectorAll(".nav-items a")
+    innerScrollContent.forEach((image) => {
+      const dupe = image.cloneNode(true);
+      dupe.setAttribute("aria-hidden", true);
+      innerScroll.appendChild(dupe);
+    });
 
-      menuButton.addEventListener("click", () => {
-        navigation.classList.add("active")
-        console.log("now act")
-      })
+    window.addEventListener("scroll", function () {
+      const nav = document.querySelector("header");
+      nav.classList.toggle("sticky", window.scrollY > 0);
+    });
 
-      closeButton.addEventListener("click", () => {
-        navigation.classList.remove("active")
-      })
+    const menuButton = document.querySelector(".nav-menu-btn");
+    const closeButton = document.querySelector(".nav-close-btn");
+    const navigation = document.querySelector(".navigation");
+    const navItems = document.querySelectorAll(".nav-items a");
 
-      navItems.forEach((navItem => {
-        navItem.addEventListener("click", () => {
-          navigation.classList.remove("active")
+    menuButton.addEventListener("click", () => {
+      navigation.classList.add("active");
+      console.log("now act");
+    });
 
-        })
-      }))
+    closeButton.addEventListener("click", () => {
+      navigation.classList.remove("active");
+    });
 
-    }, []);
+    navItems.forEach((navItem) => {
+      navItem.addEventListener("click", () => {
+        navigation.classList.remove("active");
+      });
+    });
+  }, []);
+
   return (
     <div>
       <Nav />
