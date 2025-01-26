@@ -13,7 +13,7 @@ const Skills = () => {
         const mergedData = categories.map((category) => {
           const categorySkills = skills.filter((skill) => skill.category_id === category.id);
           return {
-            name: category.name || 'Unknown',
+            name: category.category_name || 'Unknown',
             id: category.id,
             skills: categorySkills
           };
