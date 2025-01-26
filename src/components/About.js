@@ -56,10 +56,10 @@ const About = () => {
                 👋 Hi! I'm Josh Wakelin
               </h2>
               <p data-aos="fade" data-aos-delay="250">
-                I am a 23-year-old software developer with a particular interest in artificial intelligence and cybersecurity. This portfolio contains a list of my most recent projects and experience, with a link to also view or download my CV.
+                I am a software developer with a particular interest in artificial intelligence and cybersecurity. This portfolio contains a list of my most recent projects and experience, with a link to also view or download my CV.
               </p>
               <a
-                href="/path-to-cv.pdf"
+                href="/files/wakelin-joshua-data-science.pdf"
                 className="btn"
                 data-aos="fade"
                 data-aos-delay="300"
@@ -68,10 +68,10 @@ const About = () => {
                 Download CV <i className="fa-solid fa-download" aria-hidden="true"></i>
               </a>
               <h2 className="description-section-02" data-aos="fade" data-aos-delay="200">
-                🖥 Off the Web
+                Off the Web
               </h2>
               <p data-aos="fade" data-aos-delay="250">
-                I was raised in Surrey, BC, and have relocated to London, Ontario. As a kid, I was fascinated by technology and more specifically the idea of automation in everyday life. When I'm not coding, I spend my time exercising and spending quality time with my loved ones.
+                I was raised in Surrey, BC. As a kid, I was fascinated by technology and more specifically the idea of automation in everyday life. When I'm not coding, I spend my time exercising and spending quality time with my loved ones.
               </p>
             </div>
           </div>

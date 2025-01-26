@@ -712,8 +712,7 @@ header.sticky .nav-bar{
   }
 
   .nav-menu-btn{
-    background: red;
-    filter: var(--color-filter);
+    background: 30px no-repeat url('/public/images/burger.svg');
     background-size: 30px;
     background-position: center;
     width: 40px;
