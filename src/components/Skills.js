@@ -55,7 +55,7 @@ const Skills = () => {
                       </div>
                       <div 
                         className="line" 
-                        data-progress={parseInt(skill.proficiency)} 
+                        progress={parseInt(skill.proficiency)} 
                         aria-labelledby={`skill-${skill.skill_name}-progress`}
                       ></div>
                     </li>
