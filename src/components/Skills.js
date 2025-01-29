@@ -24,6 +24,8 @@ const Skills = () => {
       .catch((error) => {
         console.error('Error fetching data:', error);
         setLoading(false);
+      
+      
       });
   }, []);
 
@@ -51,11 +53,11 @@ const Skills = () => {
                     <li key={skill.id} className="bar" data-aos-delay="" data-aos="fade">
                       <div className="info">
                         <span>{skill.skill_name}</span>
-\                        <span>{skill.proficiency}%</span>
+                        <span>{skill.proficiency}%</span>
                       </div>
                       <div 
                         className="line" 
-                        progress={parseInt(skill.proficiency)} 
+                        data-progress={parseInt(skill.proficiency)} 
                         aria-labelledby={`skill-${skill.skill_name}-progress`}
                       ></div>
                     </li>
