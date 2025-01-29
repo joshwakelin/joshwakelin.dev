@@ -699,16 +699,14 @@ header.sticky .nav-bar{
   }
 
   .nav-close-btn{
-    position: absolute;
-    background: red;
-    filter: var(--color-filter);
-    background-size: 12px;
+    background: 30px no-repeat url('/public/images/close.svg');
+    background-size: 30px;
     background-position: center;
     width: 40px;
     height: 40px;
-    top: 0;
-    right: 0;
-    margin: 10px;
+    cursor: pointer;
+    display: block;
+    
   }
 
   .nav-menu-btn{
