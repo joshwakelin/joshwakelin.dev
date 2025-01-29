@@ -532,7 +532,7 @@ header.sticky .nav-bar{
   left: 0;
   background: var(--second-color);
   border-radius: 2px;
-  width: var(--progress, 0%)
+  width: var(--progress, 0%) !important
   
 }
 
