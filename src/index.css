@@ -653,11 +653,22 @@ header.sticky .nav-bar{
     position: absolute;
   }
 
-  .home-container .home-img img {
-    width: 65%;
-    transform: translate(80px, -120px) !important;
 
-  }
+
+  .home-img img {
+    width: 65%;
+    animation: moveOnce 0s ease-in-out forwards; /* Runs once and stops */
+}
+
+@keyframes moveOnce {
+    from {
+        transform: translate(0, 0);
+    }
+    to {
+        transform: translate(80px, -120px);
+    }
+}
+
 
   .home .home-container .info { 
     font-size: 0.8rem;
