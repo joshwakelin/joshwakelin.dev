@@ -3,7 +3,7 @@ import React from "react";
 const Cards = () => {
   const projects = [
     {
-      title: "ChainGuarder",
+      title: "Spoofey",
       description:
         "ChainGuarder utilizes Artificial Intelligence to detect fraud on the blockchain. ChainGuarder also fingerprints transactions once proven fraudulent, adding more data to its model constantly.",
       image: "/images/projects/chainguarder.png",
