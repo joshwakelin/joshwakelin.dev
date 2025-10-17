@@ -655,10 +655,13 @@ header.sticky .nav-bar{
 
 
 
+
   .home-img img {
     width: 65%;
-    animation: moveOnce 0s ease-in-out forwards; /* Runs once and stops */
+    transform: translate(80px, -80px) !important; /* Static offset, no keyframes */
+    transition: none !important;
 }
+
 
 @keyframes moveOnce {
     from {
