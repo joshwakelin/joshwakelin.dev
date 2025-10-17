@@ -658,7 +658,7 @@ header.sticky .nav-bar{
 
   .home-img img {
     width: 65%;
-    transform: translate(80px, -80px) !important; /* Static offset, no keyframes */
+    transform: translate(80px, -40px) !important; /* Static offset, no keyframes */
     transition: none !important;
 }
 
