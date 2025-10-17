@@ -665,7 +665,7 @@ header.sticky .nav-bar{
         transform: translate(0, 0);
     }
     to {
-        transform: translate(80px, -120px);
+        transform: translate(80px, -80px);
     }
 }
 
