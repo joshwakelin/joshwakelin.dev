@@ -795,3 +795,44 @@ header.sticky .nav-bar{
 
   
 }
+/* === SCROLLER FIXES (append at end) =========================== */
+
+/* 1) Prevent wrap + force GPU compositing to stop flicker */
+.scrollerc__inner{
+  flex-wrap: nowrap;                 /* never wrap mid-loop */
+  will-change: transform;            /* hint compositor */
+  transform: translateZ(0);          /* force GPU layer */
+  backface-visibility: hidden;       /* avoid paint glitches */
+  -webkit-backface-visibility: hidden;
+}
+
+/* 2) Make loop distance exact so no “gap” phase occurs */
+@keyframes scroll {
+  to { transform: translateX(-50%); }  /* replaces calc(-50% - 0.5rem) */
+}
+
+/* 3) So items don't fade out too early on desktop edges */
+@media (min-width: 769px){
+  .scrollerc{
+    -webkit-mask: linear-gradient(
+      90deg,
+      transparent 8%,
+      rgba(0,0,0,1) 14%,
+      rgba(0,0,0,1) 86%,
+      transparent 92%
+    );
+    mask: linear-gradient(
+      90deg,
+      transparent 8%,
+      rgba(0,0,0,1) 14%,
+      rgba(0,0,0,1) 86%,
+      transparent 92%
+    );
+  }
+}
+
+/* 4) Keep mobile behavior (no blur) and ensure timing applies */
+@media (max-width: 768px) {
+  .scrollerc { -webkit-mask: none; mask: none; }
+  .scrollerc .scrollerc__inner { animation-duration: 20s !important; }
+}
