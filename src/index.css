@@ -119,25 +119,12 @@ li{
  }
  @media (max-width: 768px) {
   .scrollerc .scrollerc__inner {
-    animation-duration: 20s !
-    important;
+    animation-duration: 20s !important;
   }
 
   .scrollerc {
-    -webkit-mask: linear-gradient(
-      90deg,
-      transparent 5%,
-      rgba(0,0,0,1) 15%,
-      rgba(0,0,0,1) 85%,
-      transparent 95%
-    );
-    mask: linear-gradient(
-      90deg,
-      transparent 5%,
-      rgba(0,0,0,1) 15%,
-      rgba(0,0,0,1) 85%,
-      transparent 95%
-    );
+    -webkit-mask: none;
+    mask: none;
   }
   
 }
