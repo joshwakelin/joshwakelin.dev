@@ -1,36 +1,17 @@
 import React from 'react';
 
-// Dynamically import all images in the 'images/swipe' directory
-
 const Home = () => {
   return (
     <section className="home flex-center" id="home">
       <div className="home-container">
         <div className="media-icons">
-          <a 
-            href="https://www.github.com/joshwakelin" 
-            target="_blank" 
-            data-aos="fade" 
-            data-aos-delay="550" 
-            rel="noreferrer" 
-            aria-label="Visit my GitHub profile"
-          >
+          <a href="https://github.com/joshwakelin" target="_blank" rel="noreferrer" data-aos="fade" data-aos-delay="550">
             <i className="fab fa-github"></i>
           </a>
-          <a 
-            href="https://www.linkedin.com/in/joshwakelin" 
-            data-aos="fade" 
-            data-aos-delay="600"
-            aria-label="Visit my LinkedIn profile"
-          >
+          <a href="https://linkedin.com/in/joshwakelin" data-aos="fade" data-aos-delay="600">
             <i className="fab fa-linkedin"></i>
           </a>
-          <a 
-            href="https://www.instagram.com/joshwakelin" 
-            data-aos="fade" 
-            data-aos-delay="650"
-            aria-label="Visit my Instagram profile"
-          >
+          <a href="https://instagram.com/joshwakelin" data-aos="fade" data-aos-delay="650">
             <i className="fab fa-instagram"></i>
           </a>
         </div>
@@ -42,38 +23,40 @@ const Home = () => {
           </a>
         </div>
         <div className="home-img">
-          <img 
-            src="images/memoji.png" 
-            alt="Joshua Wakelin's Memoji" 
-            width="450px" 
-            data-aos-delay="450" 
-            data-aos-duration="1000" 
-            data-aos-mirror="true" 
-            data-aos="fade-up" 
+          <img
+            src="images/memoji.png"
+            alt="Joshua Wakelin"
+            width="450"
+            data-aos="fade-up"
+            data-aos-delay="450"
+            data-aos-duration="1000"
+            data-aos-once="true"
+            data-aos-anchor-placement="top-bottom"
+            loading="eager"
           />
         </div>
       </div>
-
-      <div 
-        className='scrollerc' 
-        data-aos-duration="1000" 
-        data-aos-mirror="true" 
-        data-aos-delay="850" 
+      {/* TRULY SEAMLESS SCROLLER - Only need ONE set now, JS handles cloning */}
+      <div
+        className="scrollerc"
         data-aos="fade"
+        data-aos-delay="850"
+        data-aos-duration="1000"
+        data-aos-mirror="true"
       >
         <div className="scrollerc__inner">
-          <img src="images/swipe/2.png" alt="Swipe  2" />
-          <img src="images/swipe/6.png" alt="Swipe  6" />
-          <img src="images/swipe/7.png" alt="Swipe  7" />
-          <img src="images/swipe/8.png" alt="Swipe  8" />
-          <img src="images/swipe/9.png" alt="Swipe  9" />
-          <img src="images/swipe/10.png" alt="Swipe  10" />
-          <img src="images/swipe/13.png" alt="Swipe  13" />
-          <img src="images/swipe/14.png" alt="Swipe  14" />
-          <img src="images/swipe/15.png" alt="Swipe  15" />
-          <img src="images/swipe/js.png" alt="Swipe " />
-          <img src="images/swipe/postgresql.png" alt="Swipe  Undefined" />
-          <img src="images/swipe/py.png" alt="Swipe  16" />
+          <img src="images/swipe/2.png" alt="" loading="eager" />
+          <img src="images/swipe/6.png" alt="" loading="eager" />
+          <img src="images/swipe/7.png" alt="" loading="eager" />
+          <img src="images/swipe/8.png" alt="" loading="eager" />
+          <img src="images/swipe/9.png" alt="" loading="eager" />
+          <img src="images/swipe/10.png" alt="" loading="eager" />
+          <img src="images/swipe/13.png" alt="" loading="eager" />
+          <img src="images/swipe/14.png" alt="" loading="eager" />
+          <img src="images/swipe/15.png" alt="" loading="eager" />
+          <img src="images/swipe/js.png" alt="JavaScript" loading="eager" />
+          <img src="images/swipe/postgresql.png" alt="PostgreSQL" loading="eager" />
+          <img src="images/swipe/py.png" alt="Python" loading="eager" />
         </div>
       </div>
     </section>

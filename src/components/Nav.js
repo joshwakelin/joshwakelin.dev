@@ -13,6 +13,8 @@ const Nav = () => {
             <a href="#home" aria-label="Go to home section">Home</a>
             <a href="#about" aria-label="Go to about section">About</a>
             <a href="#projects" aria-label="Go to projects section">Projects</a>
+            <a href="#journey" aria-label="Go to journey section">Journey</a>
+
             <a href="#skills" aria-label="Go to skills section">Skills</a>
           </div>
         </div>
