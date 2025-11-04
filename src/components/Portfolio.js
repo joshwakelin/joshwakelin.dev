@@ -3,13 +3,13 @@ import React from "react";
 const Cards = () => {
   const projects = [
     {
-      title: "ChainGuarder",
+      title: "Spoofey",
       description:
-        "ChainGuarder utilizes Artificial Intelligence to detect fraud on the blockchain. ChainGuarder also fingerprints transactions once proven fraudulent, adding more data to its model constantly.",
+        "Spoofey is a service which uses phone number spoofing system leveraging Asterisk PBX, FreePBX, and SIP services. Enables dynamic caller ID manipulation while maintaining call quality and integrating with existing telephony infrastructure.",
       image: "/images/projects/chainguarder.png",
       link: "https://api.chainguarder.com/apidocs",
-      text: "Test Projects API",
-      skills: ["WIP", ".py", "AI", "API", "Crypto"],
+      text: "View Project Video",
+      skills: ["WIP", "Asterisk", "FreePBX", "Ubuntu", "SIP Trunking",],
     },
     {
       title: "MyMifare",
@@ -20,15 +20,7 @@ const Cards = () => {
       text: "View Project Video",
       skills: [".py", "pyscard", "NFC", "AES128"],
     },
-    {
-      title: "Nestfire",
-      description:
-        "This is an open source project which uses NestJS to create seamless interactions with Firestore databases. It provides simple API endpoints for retrieving and updating data.",
-      image: "/images/projects/nestfire.png",
-      link: "https://github.com/joshwakelin/nestfire",
-      text: "View Project",
-      skills: [".ts", "NestJS", "Firebase", "REST"],
-    },
+    
     {
       title: "joshwakelin.dev",
       description:
