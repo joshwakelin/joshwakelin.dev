@@ -96,10 +96,6 @@ li {
   mask-composite: intersect; /* Ensures the mask combines properly */
 }
 
-  /* Smooth fade at edges */
-  -webkit-mask: linear-gradient(90deg, transparent 0%, black 10%, black 90%, transparent 100%);
-  mask: linear-gradient(90deg, transparent 0%, black 10%, black 90%, transparent 100%);
-}
 
 .scrollerc__inner {
 
