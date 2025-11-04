@@ -53,7 +53,7 @@ const About = () => {
           <div className="about-info">
             <div className="description">
               <h2 data-aos="fade" data-aos-delay="200">
-                👋 Hi! I'm Josh Wakelin
+                👋 test Hi! I'm Josh Wakelin
               </h2>
               <p data-aos="fade" data-aos-delay="250">
                 I am a software developer with a particular interest in artificial intelligence and cybersecurity. This portfolio contains a list of my most recent projects and experience, with a link to also view or download my CV.
