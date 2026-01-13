@@ -51,6 +51,11 @@ html {
   scroll-behavior: smooth;
 }
 
+.home-img {
+  -webkit-mask: linear-gradient(180deg, black 70%, transparent 100%) !important;
+  mask: linear-gradient(180deg, black 70%, transparent 100%) !important;
+}
+
 body {
   color: var(--first-color);
   background: var(--body-bg-color);
