@@ -65,7 +65,6 @@ function App() {
         
         // Calculate width by measuring actual positions
         const firstItem = allItems[0].getBoundingClientRect();
-        const lastItemOfFirstSet = allItems[halfCount - 1].getBoundingClientRect();
         const firstItemOfSecondSet = allItems[halfCount].getBoundingClientRect();
         
         // The exact width is the distance from start of first to start of second set

@@ -9,7 +9,7 @@ const Cards = () => {
       image: "/images/projects/chainguarder.png",
       link: "https://api.chainguarder.com/apidocs",
       text: "View Project Video",
-      skills: ["WIP", "Asterisk", "FreePBX", "Ubuntu", "SIP Trunking",],
+      skills: ["WIP", "Asterisk", "FreePBX", "Ubuntu", "SIP",],
     },
     {
       title: "MyMifare",

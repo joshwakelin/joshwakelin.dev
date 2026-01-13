@@ -19,6 +19,9 @@
   --scroll-bar-color: #c5cadf;
   --scroll-thumb-color: #70768a;
   --scroll-thumb-hover-color: #454f6b;
+
+  /* Fade sizing for overlays (desktop/tablet) */
+  --fade-size: 110px;
 }
 
 * {
@@ -32,7 +35,7 @@ html, body {
   overflow-x: hidden;
 }
 
-::-webkit-scrollbar{
+::-webkit-scrollbar {
   width: 10px;
   background: var(--scroll-bar-color);
 }
@@ -44,7 +47,6 @@ html, body {
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--scroll-thumb-hover-color);
-  border-radius: 2em;
 }
 
 html {
@@ -67,101 +69,80 @@ li {
 }
 
 /* ========================================
-   SEAMLESS SCROLLER – REDESIGNED FOR PERFECT LOOP
-   Uses JavaScript to calculate exact width and ensure perfect alignment
+   SCROLLER (rAF-driven, no loop flicker)
    ======================================== */
-.scrollerc {
-   overflow-x: hidden;
+.scroller {
+  overflow: hidden;
   width: 100%;
   max-width: 100vw;
   position: relative;
-  -webkit-mask: linear-gradient(90deg, transparent, rgba(0,0,0,1) 20%, rgba(0,0,0,1) 80%, transparent);
-  mask: linear-gradient(90deg, transparent, rgba(0,0,0,1) 20%, rgba(0,0,0,1) 80%, transparent);
- 
-}
-.home-img img {
-  -webkit-mask: linear-gradient(
-    to bottom,
-    red 0%,         /* Top of the image is fully visible */
-    red 80%,        /* Bottom starts fading */
-    transparent 100% /* Fully transparent at the very bottom */
-  ); 
-  mask: linear-gradient(
-    to bottom,
-    red 0%,         
-    red 80%,        
-    transparent 100% 
-  ); 
-  -webkit-mask-composite: destination-in;
-  mask-composite: intersect; /* Ensures the mask combines properly */
 }
 
+/* Fade overlays (more stable than mask) */
+.scroller::before,
+.scroller::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 8%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
 
-.scrollerc__inner {
+.scroller::before {
+  left: 0;
+  background: linear-gradient(90deg, var(--body-bg-color), transparent);
+}
 
-  padding-block: 1rem;
+.scroller::after {
+  right: 0;
+  background: linear-gradient(270deg, var(--body-bg-color), transparent);
+}
+
+.scroller__inner {
   display: flex;
-  flex-wrap: nowrap; /* ensure no wrapping at any point */
-  gap: 3rem;
-  height: 200px;
-  padding-block: 1rem;
+  flex-wrap: nowrap;
+  width: max-content;
+
   will-change: transform;
-  
-  /* Hardware acceleration for smooth animation */
   transform: translate3d(0, 0, 0);
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
-  perspective: 1000px;
-  -webkit-perspective: 1000px;
 }
 
-
- .scrollerc .scrollerc__inner {
-  width: max-content;
+.scroller__set {
+  display: flex;
   flex-wrap: nowrap;
-  animation: scroll var(--_animation-duration, 70s) linear infinite !important;
-  animation-duration: 25s !important;
-
- }
- @media (max-width: 768px) {
-  .scrollerc .scrollerc__inner {
-    animation-duration: 20s !important;
-  }
-
-  .scrollerc {
-    -webkit-mask: linear-gradient(
-      90deg,
-      transparent 5%,
-      rgba(0,0,0,1) 15%,
-      rgba(0,0,0,1) 85%,
-      transparent 95%
-    );
-    mask: linear-gradient(
-      90deg,
-      transparent 5%,
-      rgba(0,0,0,1) 15%,
-      rgba(0,0,0,1) 85%,
-      transparent 95%
-    );
-  }
-  
+  gap: 3rem;
+  padding-block: 1rem;
+  padding-inline: 1.5rem; /* equal breathing room on both ends */
+  height: 200px;
+  align-items: center;
 }
 
-.scrollerc__inner > * {
+.scroller__set > * {
   flex: 0 0 auto;
 }
 
-.scrollerc__inner img {
+.scroller__set img {
   height: 130px;
+  width: auto;
   display: block;
   pointer-events: none;
   user-select: none;
-  -webkit-user-drag: none;
 }
 
- @keyframes scroll {
-  to {
-    transform: translateX(-50%); /* was: calc(-50% - 0.5rem) */
+@media (max-width: 768px) {
+  .scroller::before,
+  .scroller::after {
+    width: 6%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroller__inner {
+    transform: none !important;
   }
 }
 
@@ -321,6 +302,39 @@ header.sticky .nav-bar {
 }
 
 /* ========================================
+   MEMOJI FADE (DESKTOP/TABLET ONLY)
+   - IMPORTANT FIX for "tween" on resize:
+     DON'T use transform for layout positioning on mobile,
+     because AOS also animates via transform -> causes float/tween.
+   ======================================== */
+.home-img {
+  position: relative;
+  display: inline-block; /* overlay sizes to image box */
+  overflow: hidden;      /* keeps fade inside image box */
+}
+
+.home-img img {
+  display: block;
+}
+
+/* bottom fade overlay (desktop/tablet) */
+.home-img::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: var(--fade-size);
+  z-index: 2;
+  pointer-events: none;
+  background: linear-gradient(
+    0deg,
+    var(--body-bg-color) 0%,
+    rgba(254, 254, 254, 0) 100%
+  );
+}
+
+/* ========================================
    GENERAL SECTIONS
    ======================================== */
 .section {
@@ -365,17 +379,13 @@ header.sticky .nav-bar {
 
 .about-img {
   position: relative;
-  clip-path: polygon(0 0, 85% 0, 100% 20%, 100% 100%, 0 100%);
-  transition: transform 0.1s ease-out;
   overflow: hidden;
-  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 .about-img img {
   max-width: 100%;
   min-width: 500px;
   border-radius: 10px;
-  object-fit: cover;
 }
 
 .about-info .description {
@@ -637,12 +647,6 @@ header.sticky .nav-bar {
   cursor: pointer;
 }
 
-.home-img {
-  -webkit-mask: linear-gradient(180deg, black 70%, transparent 100%);
-  mask: linear-gradient(180deg, black 70%, transparent 100%);
-}
-
-
 /* ========================================
    MOBILE RESPONSIVE
    ======================================== */
@@ -659,26 +663,36 @@ header.sticky .nav-bar {
     display: grid;
   }
 
-  .home .home-img {
-    position: absolute;
-    transform: translate(80px, -80px);
+  /* FIX #1: stop cutting off the top of the memoji
+     - give the HOME section a bit more breathing room
+     - position the image with top/right instead of transform (prevents AOS transform conflict)
+  */
+  .home {
+    padding-top: 5.25rem;
   }
 
+  .home .home-img {
+    position: absolute;
+    top: 3.75rem;   /* <-- adjust slightly if you want it higher/lower */
+    right: -0.5rem; /* <-- keeps it visually similar without transform */
+  }
+
+  /* FIX #2: remove the white fade on mobile screens */
+  .home-img::after {
+    display: none;
+  }
+
+  /* FIX #3: remove "tween/float" when resizing mobile -> bigger
+     Root cause: you were using transform for layout positioning on mobile,
+     but AOS also animates via transform, so when breakpoint changes,
+     transform transitions happen -> looks like it floats.
+     Solution: no layout transforms here.
+  */
   .home-img img {
     width: 65%;
-    transform: translate(80px, -80px) !important; /* Static offset, no keyframes */
-    transition: none !important;
-}
-
-@keyframes moveOnce {
-    from {
-        transform: translate(0, 0);
-    }
-    to {
-        transform: translate(80px, -80px);
-    }
-}
-
+    transform: none !important;     /* no layout transform */
+    transition: none !important;    /* prevents any leftover transform tween */
+  }
 
   .home .home-container .info {
     font-size: 0.8rem;
@@ -774,49 +788,5 @@ header.sticky .nav-bar {
     min-width: 0;
     width: 100%;
   }
-  
-
-
-  
 }
-/* === SCROLLER FIXES (append at end) =========================== */
-
-/* 1) Prevent wrap + force GPU compositing to stop flicker */
-.scrollerc__inner{
-  flex-wrap: nowrap;                 /* never wrap mid-loop */
-  will-change: transform;            /* hint compositor */
-  transform: translateZ(0);          /* force GPU layer */
-  backface-visibility: hidden;       /* avoid paint glitches */
-  -webkit-backface-visibility: hidden;
-}
-
-/* 2) Make loop distance exact so no “gap” phase occurs */
-@keyframes scroll {
-  to { transform: translateX(-50%); }  /* replaces calc(-50% - 0.5rem) */
-}
-
-/* 3) So items don't fade out too early on desktop edges */
-@media (min-width: 769px){
-  .scrollerc{
-    -webkit-mask: linear-gradient(
-      90deg,
-      transparent 8%,
-      rgba(0,0,0,1) 14%,
-      rgba(0,0,0,1) 86%,
-      transparent 92%
-    );
-    mask: linear-gradient(
-      90deg,
-      transparent 8%,
-      rgba(0,0,0,1) 14%,
-      rgba(0,0,0,1) 86%,
-      transparent 92%
-    );
-  }
-}
-
-/* 4) Keep mobile behavior (no blur) and ensure timing applies */
-@media (max-width: 768px) {
-  .scrollerc { -webkit-mask: none; mask: none; }
-  .scrollerc .scrollerc__inner { animation-duration: 20s !important; }
-}
+ 
