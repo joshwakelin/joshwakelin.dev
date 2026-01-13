@@ -268,13 +268,7 @@ const About = () => {
                   marginTop: '14px',
                 }}
               >
-                {tunesLoading && (
-                  <div style={{ gridColumn: '1 / -1', color: 'var(--third-color)' }}>Loading…</div>
-                )}
-
-                {!tunesLoading && tunesError && (
-                  <div style={{ gridColumn: '1 / -1', color: 'var(--third-color)' }}>{tunesError}</div>
-                )}
+                
 
                 {!tunesLoading && !tunesError && tunes.map((t, idx) => (
                   <a
@@ -291,8 +285,7 @@ const About = () => {
                       aspectRatio: '1 / 1',
                       position: 'relative',
                     }}
-                    aria-label={`Open ${t.title} by ${t.artist} on Spotify`}
-                    title={`Open Spotify search: ${t.artist} — ${t.title}`}
+                  
                   >
                     {t.image ? (
                       <img
