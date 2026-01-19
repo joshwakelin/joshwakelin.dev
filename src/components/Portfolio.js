@@ -7,7 +7,7 @@ const Cards = () => {
       description:
         "Spoofey is a service which uses phone number spoofing system leveraging Asterisk PBX, FreePBX, and SIP services. Enables dynamic caller ID manipulation while maintaining call quality and integrating with existing telephony infrastructure.",
       image: "/images/projects/chainguarder.png",
-      link: "https://api.chainguarder.com/apidocs",
+      link: "https://www.youtube.com/watch?v=FNoQf3wE_-4",
       text: "View Project Video",
       skills: ["WIP", "Asterisk", "FreePBX", "Ubuntu", "SIP",],
     },
@@ -16,7 +16,7 @@ const Cards = () => {
       description:
         "This is an open source project which uses byte manipulation to read and write sectors in near field communication (NFC) Mifare cards. The program uses standard vendor keys to decrypt AES-128 encrypted sectors.",
       image: "/images/projects/mifare.png",
-      link: "#",
+      link: "https://www.youtube.com/watch?v=VsTbwhGo3vw",
       text: "View Project Video",
       skills: [".py", "pyscard", "NFC", "AES128"],
     },
@@ -26,7 +26,7 @@ const Cards = () => {
       description:
         "Created a portfolio website based off inspiration and turned it into a fully functioning webpage.",
       image: "/images/projects/hero.png",
-      link: "https://github.com/joshwakelin/nestfire",
+      link: "https://joshwakelin.dev",
       text: "View Project",
       skills: ["React", "postgreSQL", ".html", ".js"],
     },
@@ -35,7 +35,7 @@ const Cards = () => {
       description:
         "Served as the Lead Programmer and Lua Scripter. Garnered over 300+ concurrent players on average with 100K+ monthly active users. Created ranking Discord Bots and the main gameplay programming.",
       image: "/images/projects/glace.png",
-      link: "https://github.com/joshwakelin/nestfire",
+      link: "https://www.roblox.com/games/364483307/Work-at-an-Ice-Cream-Parlor",
       text: "View Project",
       skills: [".luau", ".js", "Node.js"],
     },
